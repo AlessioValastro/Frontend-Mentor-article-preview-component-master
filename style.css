@@ -1,0 +1,201 @@
+/* ! Reset */
+body,
+html {
+  font-family: "Manrope", sans-serif; /* ! 500 700 */
+  font-size: 13px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --desaturated-dark-blue: hsl(214, 17%, 51%);
+  --grayish-blue: hsl(212, 23%, 69%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+body {
+  background: var(--light-grayish-blue);
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.main__container {
+  max-width: 800px;
+  min-height: 310px;
+  border-radius: 1rem;
+  margin: 2rem;
+
+  display: grid;
+  grid-template-columns: 40% 60%;
+
+  box-shadow: 5px 5px 10px #00000023;
+}
+.main__container_imgbox {
+  border-radius: 1rem 0 0 1rem;
+  overflow: hidden;
+  position: relative;
+}
+.main__container_imgbox img {
+  position: absolute;
+  height: 117%;
+}
+
+.main__container_content {
+  background: #ffffff;
+  padding: 2.5rem 3rem;
+  border-radius: 0 1rem 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.main__container_content h2 {
+  color: var(--very-dark-grayish-blue);
+  font-size: 1.7rem;
+}
+.main__container_content p {
+  color: var(--desaturated-dark-blue);
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+}
+.main__container_content__social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+}
+.main__container_content__social_user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.main__container_content__social_user img {
+  height: 45px;
+  border-radius: 10rem;
+}
+.main__container_content__social_user__info h3 {
+  opacity: 0.8;
+}
+.main__container_content__social_user__info p {
+  color: var(--grayish-blue);
+}
+
+.main__container_content__social_shareButton {
+  background: var(--light-grayish-blue);
+  padding: 9px;
+  border-radius: 10rem;
+
+  cursor: pointer;
+}
+.main__container_content__social_socialBox {
+  background: var(--very-dark-grayish-blue);
+  min-width: 230px;
+  padding: 1rem 1.9rem;
+  border-radius: 0.8rem;
+
+  position: absolute;
+  top: -68px;
+  right: -100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main__container_content__social_socialBox:after {
+  content: "";
+  position: absolute;
+  background: var(--very-dark-grayish-blue);
+  width: 20px;
+  height: 15px;
+  bottom: -15px;
+  right: 106px;
+  border-radius: 0 0 10rem 10rem;
+}
+.main__container_content__social_socialBox p {
+  color: var(--grayish-blue);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 4px;
+}
+.main__container_content__social_socialBox img {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.main__container_socialMobile {
+  display: none;
+}
+
+@media (max-width: 480px) {
+
+  .main__container_content__social {
+    display: none;
+  }
+
+  .main__container {
+    display: flex;
+    flex-direction: column;
+  }
+  .main__container_imgbox {
+    height: 200px;
+    border-radius: 1rem 1rem 0 0;
+  }
+  .main__container_imgbox img {
+    width: 105%;
+  }
+  .main__container_content {
+    gap: 1rem;
+    border-radius: 0;
+  }
+  .main__container_content h2 {
+    font-size: 1.2rem;
+  }
+  .main__container_content p {
+    font-size: 0.96rem;
+    line-height: 1.5rem;
+  }
+  .main__container_socialMobile {
+    background: var(--very-dark-grayish-blue);
+    padding: 1rem 2rem;
+    border-radius: 0 0 1rem 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .main__container_socialMobile__shareOptions {
+    flex: 1;
+    max-width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .main__container_socialMobile__shareOptions p {
+    color: var(--grayish-blue);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+  }
+  .main__container_socialMobile__shareButton {
+    background: var(--desaturated-dark-blue);
+    padding: 6px;
+    border-radius: 10rem;
+  }
+  .main__container_socialMobile__shareButton img {
+    filter: brightness(0) invert(1);
+  }
+}
